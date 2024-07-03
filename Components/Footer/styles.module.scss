@@ -1,0 +1,75 @@
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+
+
+.footer{
+    background-color:$bg-color-secondary ;
+    height: 30rem;
+
+    &__wrapper{
+        @include wrapper;
+    }
+    &__container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20rem;
+        border-bottom: 2px solid white;
+    }
+    &__brand{
+        @include center;
+        flex-direction: column;
+        
+        p{
+            color: $text-color-primary;
+            font-size: 1.1rem;
+            width: 28rem;
+            text-align: justify;
+        }
+    }
+    &__logo{
+        height: 12rem;
+        width: auto;
+    }
+
+    &__content{
+        @include center;
+        gap: 10rem;
+
+        ul{
+            color: $text-color-primary;
+            padding: 2rem;
+            h3{
+                font-size: 2.3rem;
+                font-weight: 600;
+                margin-bottom: 3rem;
+            }
+            li{
+                margin-top: 2rem;
+                font-size: 1.3rem;
+                cursor: pointer;
+                list-style: none;
+            }
+        }
+    }
+    &__copy{
+        color: white;
+        @include center;
+        gap: 20rem;
+        margin-top: 3rem;
+    }
+
+    &__copyText{
+        @include center;
+        flex-direction: row;
+        gap: 1rem;
+        font-size: 1.5rem;
+    }
+    &__social{
+        a{
+            padding: .5rem;
+            font-size: 2rem;
+            color: white;
+        }
+    }
+}
