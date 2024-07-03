@@ -18,3 +18,13 @@
     max-width: 128rem;
     margin: 0 auto;
 }
+
+@mixin input{
+    font-size: 1.6rem;
+    padding: .7rem;
+    width: 100%;
+    background-color: $bg-color-tertiary;
+    border: .2rem solid rgb(224, 224, 224);
+    border-radius: 1rem;
+    margin-top: 1.3rem;
+}
