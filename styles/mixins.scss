@@ -1,6 +1,15 @@
+@import './varieables.scss';
 
 @mixin center{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@mixin dash{
+    width: 4.5rem;
+    height: 0.5rem;
+    border-radius: 0.8rem;
+    background-color: $bg-color-secondary;
+    margin: 1.5rem auto;
 }
