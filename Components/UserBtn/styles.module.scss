@@ -1,0 +1,16 @@
+@import  '../../styles/mixins.scss';
+@import  '../../styles/varieables.scss';
+
+.button{
+    background: none;
+    border: none;
+    @include center;
+    gap: 1rem;
+    cursor: pointer;
+
+    img{
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+    }
+}
