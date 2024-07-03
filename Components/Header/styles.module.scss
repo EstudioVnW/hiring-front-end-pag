@@ -1,4 +1,4 @@
-@import '@/styles/varieables.scss';
+@import '@/styles/variables.scss';
 @import '@/styles/mixins.scss';
 
 .header{
@@ -7,14 +7,13 @@
     box-shadow: 0px 3px 7px -1px rgba(0,0,0,0.39);
 
     &__wrapper{
+        @include wrapper;
         height: 8rem;
-        margin: 0 auto;
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding-inline: 2%;
-        max-width: 128rem;
     }
 
     &__logo{

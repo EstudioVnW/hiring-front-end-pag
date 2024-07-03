@@ -1,4 +1,4 @@
-@import './varieables.scss';
+@import './variables.scss';
 
 @mixin center{
     display: flex;
@@ -12,4 +12,9 @@
     border-radius: 0.8rem;
     background-color: $bg-color-secondary;
     margin: 1.5rem auto;
+}
+
+@mixin wrapper{
+    max-width: 128rem;
+    margin: 0 auto;
 }
