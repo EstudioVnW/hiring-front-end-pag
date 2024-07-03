@@ -13,6 +13,8 @@ export default function Cars() {
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ut nulla cumque earum</p>
           </div>
           <Sliders />
+          <Sliders />
+          <Sliders />
         </div>
     </section>
   )
