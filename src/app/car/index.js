@@ -11,13 +11,13 @@ import { fetchCars } from "../assets/components/fetch";
 import { SwiperSlide } from "swiper/react";
 
 // Styles
-import styles from "./style.module.sass";
+import styles from "./page.module.sass";
 
 // Next
 import Image from "next/image";
 
 // Images
-import carImage from "../assets/img/skooby-doo.webp";
+import carImage from "../assets/img/car-example.webp";
 
 export default function Index({ model }) {
   const [cars, setCars] = useState([]);
@@ -31,67 +31,78 @@ export default function Index({ model }) {
   useEffect(() => {
     async function getCars() {
       const data = await fetchCars({ model });
-      setCars(data);
+      const newData = data.map((car, i) => ({
+        ...car,
+        id: `${car.model}-${i}`,
+      }));
+      setCars(newData);
     }
     getCars();
   }, [model]);
 
   function handleFavoritar(id) {
-    if (
-      favoritos.find((car) => `${car.model}-${favoritos.indexOf(car)}` === id)
-    ) {
-      const newFavoritos = favoritos.filter(
-        (car) => `${car.model}-${favoritos.indexOf(car)}` !== id
-      );
-      setFavoritos(newFavoritos);
-      localStorage.setItem("favoritos", JSON.stringify(newFavoritos));
-      alert("Carro desfavoritado com sucesso!");
-    } else {
-      const car = cars.find(
-        (car) => `${car.model}-${cars.indexOf(car)}` === id
-      );
-      const newFavoritos = [...favoritos, car];
-      setFavoritos(newFavoritos);
-      localStorage.setItem("favoritos", JSON.stringify(newFavoritos));
-      alert("Carro favoritado com sucesso!");
-    }
+    const updatedFavoritos = favoritos.some((car) => car.id === id)
+      ? favoritos.filter((car) => car.id !== id)
+      : [...favoritos, cars.find((car) => car.id === id)];
+    
+    setFavoritos(updatedFavoritos);
+    localStorage.setItem("favoritos", JSON.stringify(updatedFavoritos));
   }
 
   return (
     <>
       <Carousel>
-        {cars.map((car, i) => {
-          const uniqueId = `${car.model}-${i}`;
-          return (
-            <SwiperSlide key={uniqueId}>
+        {cars.map((car) => (
+          <SwiperSlide key={car.id}>
+            <section className={styles.cards__container}>
               <div className={styles.card}>
-                <div className={styles.card__info}>
-                  <div>
-                    <h2 className={styles.card__info__title}>{car.model}</h2>
-                    <p className={styles.card__info__text}>{car.class}</p>
+                <div className={styles.card__wrapper}>
+                  <div className={styles.card__color} />
+                  <Image
+                    src={carImage}
+                    alt={`Foto do ${car.model}`}
+                    width={300}
+                    height={300}
+                    className={styles.card__image}
+                  />
+                  <div className={styles.card__info}>
+                    <p className={styles.car__model}>{car.model}</p>
+                    <p className={styles.car__year}>{car.year}</p>
+                  </div>
+                  <div className={styles.card__actions}>
+                    <div
+                      className={styles.card__favorite}
+                      onClick={() => handleFavoritar(car.id)}
+                    >
+                      {favoritos.some((favorito) => favorito.id === car.id) ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 64 64"
+                          className={styles.favorited}
+                        >
+                          <path
+                            d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z"
+                            className={styles.filled}
+                          ></path>
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 64 64"
+                        >
+                          <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z" />
+                        </svg>
+                      )}
+                    </div>
+                    <div className={styles.card__view}>
+                      <HandleViewDetails id={car.id} />
+                    </div>
                   </div>
                 </div>
-                <div className={styles.card__info__buttons}>
-                  <HandleViewDetails id={uniqueId} />
-                  <button onClick={() => handleFavoritar(uniqueId)}>
-                    {favoritos.find(
-                      (car) =>
-                        `${car.model}-${favoritos.indexOf(car)}` === uniqueId
-                    )
-                      ? "Desfavoritar"
-                      : "Favoritar"}
-                  </button>
-                </div>
-                <Image
-                  src={carImage}
-                  alt={`Foto do ${car.model}`}
-                  width={300}
-                  height={300}
-                />
               </div>
-            </SwiperSlide>
-          );
-        })}
+            </section>
+          </SwiperSlide>
+        ))}
       </Carousel>
     </>
   );

@@ -18,12 +18,14 @@ export default function Page() {
       <h1>Favoritos</h1>
       {favoritos && favoritos.length ? (
         favoritos.map((car, i) => {
-          const uniqueId = `${car.model}-${i}`;
           return (
-            <div key={uniqueId}>
+            <div key={i}>
               <h2>{car.model}</h2>
               <p>{car.class}</p>
-              <HandleViewDetails id={uniqueId} />
+              <p>
+                {car.id}
+              </p>
+              <HandleViewDetails id={car.id} />
             </div>
           );
         })
