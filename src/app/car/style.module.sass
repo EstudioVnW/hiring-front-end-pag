@@ -1,0 +1,46 @@
+@import "../assets/sass/mixins"
+
+.card
+  width: 100%
+  height: 20rem
+  background-color: #14292c
+  border-radius: .5rem
+  box-shadow: 0 0 1rem rgba(0, 0, 0, .5)
+  overflow: hidden
+
+  img
+    width: 100%
+    height: 75%
+    object-fit: cover
+
+  .card__info
+    padding: 1rem
+    color: #f9f9f9
+
+  .card__info__title
+    text-transform: uppercase
+    font-size: 1.5rem
+    font-weight: 700
+    margin-bottom: .5rem
+
+  .card__info__text
+    text-transform: capitalize
+
+  .card__info__buttons
+    @include flex(row, flex-start, center)
+    width: 100%
+    position: absolute
+    bottom: 1rem
+
+    button
+      padding: .5rem 1rem
+      margin: 0 .5rem
+      border: none
+      border-radius: .5rem
+      background-color: #669ea1
+      color: #f9f9f9
+      cursor: pointer
+      transition: background-color .3s
+
+      &:hover
+        background-color: #4b7d80

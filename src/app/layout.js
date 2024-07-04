@@ -1,4 +1,5 @@
 import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.sass";
 
 //Components
@@ -12,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className={GeistSans.className}>
+      <body className={`${GeistSans.className} ${GeistMono.className}`}>
         <Header />
         {children}
       </body>
