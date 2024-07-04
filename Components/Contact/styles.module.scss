@@ -108,3 +108,128 @@
         }
     }
 }
+
+@media (max-width: 1200px) {
+    .contact {
+        margin-top: 5rem;
+      &__container {
+        gap: 10rem;
+      }
+  
+      &__form {
+        width: 35rem;
+        h2 {
+          font-size: 1.8rem;
+        }
+        button {
+          font-size: 1.8rem;
+        }
+      }
+  
+      &__info {
+        margin-bottom: 3rem;
+        h2 {
+          font-size: 2rem;
+        }
+  
+        &__sac,
+        &__whatsapp {
+          width: 100%;
+          font-size: 1.6rem;
+          padding: 1.2rem;
+        }
+        
+        h3,
+        p {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .contact {
+      &__container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+      }
+  
+      &__form {
+        width: 100%;
+        max-width: 30rem;
+        h2 {
+          font-size: 1.6rem;
+        }
+        button {
+          font-size: 1.6rem;
+        }
+      }
+  
+      &__info {
+        h2 {
+          width: 100%;
+          max-width: 30rem;
+          font-size: 1.8rem;
+        }
+  
+        &__sac,
+        &__whatsapp {
+          width: 100%;
+          font-size: 1.4rem;
+          padding: 1rem;
+        }
+  
+        h3,
+        p {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact {
+      &__wrapper {
+        height: auto;
+        padding-inline: 1rem;
+      }
+  
+      &__container {
+        gap: 1rem;
+      }
+  
+      &__form {
+        width: 100%;
+        h2 {
+          font-size: 1.4rem;
+        }
+        input,
+        select,
+        textarea {
+          font-size: 1rem;
+        }
+        button {
+          font-size: 1.4rem;
+        }
+      }
+  
+      &__info {
+        h2 {
+          font-size: 1.6rem;
+        }
+  
+        &__sac,
+        &__whatsapp {
+          width: 100%;
+          font-size: 1.2rem;
+          padding: 0.8rem;
+        }
+  
+        h3,
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }

@@ -52,3 +52,96 @@
         }
     }
 }
+
+@media (max-width: 1200px) {
+    .banner {
+      &__content {
+        h1 {
+          font-size: 3.5rem;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+      }
+  
+      &__imgCars {
+        img {
+          width: 50rem;
+        }
+      }
+    }
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .banner {
+      &__wrapper {
+        flex-direction: column;
+        height: auto;
+        gap: 2rem;
+        
+      }
+      &__dash{
+            @include dash;
+        }  
+  
+      &__content {
+        margin-top: 1.5rem;
+        text-align: center;
+        h1 {
+          font-size: 3rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+  
+      &__imgCars {
+        img {
+          width: 40rem;
+          margin-left: -11%;
+        }
+      }
+  
+      &__buttons {
+        justify-content: center;
+        button {
+          img {
+            width: 12rem;
+          }
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .banner {
+      &__wrapper {
+        gap: 1rem;
+      }
+  
+      &__content {
+        width: 40rem;
+        h1 {
+          font-size: 2.2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+  
+      &__imgCars {
+        img {
+          width: 30rem;
+        }
+      }
+  
+      &__buttons {
+        button {
+          img {
+            width: 10rem;
+          }
+        }
+      }
+    }
+  }
