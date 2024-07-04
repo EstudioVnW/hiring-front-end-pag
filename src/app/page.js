@@ -15,14 +15,14 @@ export default function Home() {
           </h1>
         </section>
         <section>
-          <h2 className={styles.model__title}>Toyotas</h2>
+          <h2 className={styles.model__title}>Toyota</h2>
           <Cars model="corolla" />
 
-          <h2 className={styles.model__title}>Renaults</h2>
-          <Cars model="renault" />
+          <h2 className={styles.model__title}>Volkswagen</h2>
+          <Cars model="taos" />
 
-          <h2 className={styles.model__title}>BMW</h2>
-          <Cars model="bmw" />
+          <h2 className={styles.model__title}>Chevrolet</h2>
+          <Cars model="cruze" />
         </section>
       </section>
     </>
