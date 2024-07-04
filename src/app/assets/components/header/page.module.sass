@@ -1,0 +1,66 @@
+@import "../../sass/mixins"
+
+.header
+  width: 100%
+  height: 10vh
+  @include flex(row, flex-start, center)
+  padding: 0 2rem 0 1.5rem
+
+  .header__container
+    width: 100%
+    @include flex(row, space-between, center)
+
+  .header__logo
+    @include flex(row, center, center)
+
+    .header__icon
+      width: 2.5rem
+      height: 2.5rem
+      @include flex(row, center, center)
+      background-color: #000
+      border-radius: 0.9rem
+      border: 0.0625rem solid #776e62
+      cursor: pointer
+      transition: all 0.3s ease
+
+      &:hover
+        img
+          transform: scale(1.1)
+
+    .header__title
+      font-size: .7rem
+      margin-left: .5rem
+      line-height: 1.25rem
+      color: #f9f9f9
+      text-transform: uppercase
+
+  .header__nav
+    @include flex(row, flex-end, center)
+    width: 100%
+
+    .header__nav__list
+      @include flex(row, center, center)
+      margin-left: 1.25rem
+      list-style: none
+
+      li
+        margin-left: 1.25rem
+        font-size: .9rem
+        cursor: pointer
+
+        a
+          color: #a3a3a3
+          transition: all 0.3s ease
+
+          &:hover
+            color: #669ea1
+
+        a::after
+          content: ""
+          display: block
+          border-bottom: 0.125rem solid #669ea1
+          transform: scaleX(0)
+          transition: transform 0.3s ease
+
+        a:hover::after
+          transform: scaleX(1)
