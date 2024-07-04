@@ -1,4 +1,3 @@
-
 ## Objetivo
 Construir uma aplicação web em NextJS que tenha o comportamento de uma locadora de carros, contendo a página Home, Favoritos, Single page do carro e formulário de reserva com o carro escolhido.
 
