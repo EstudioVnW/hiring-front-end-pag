@@ -25,7 +25,8 @@
   .home__hero__title
     @include flex(column, center, center)
     line-height: 3rem
-    font-size: 2.5rem
+    font-size: clamp(1.5rem, 2.5vw, 3rem)
+    text-align: center
     padding-bottom: 1.5rem
     color: #f9f9f9
     text-transform: uppercase
@@ -40,7 +41,7 @@
   z-index: -1
   left: -.5rem
   top: -.1rem
-  border-width: 2px
+  border-width: 0.125rem
   border-style: solid
   border-color: $primary-blue
   position: absolute
@@ -58,7 +59,7 @@
   left: -.4rem
   top: .3rem
   padding: 1rem .8rem
-  border-width: 2px
+  border-width: 0.125rem
   border-style: solid
   border-color: $primary-blue
   border-left-color: transparent
