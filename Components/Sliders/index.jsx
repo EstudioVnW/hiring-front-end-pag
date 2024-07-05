@@ -70,8 +70,8 @@ export default function Sliders({ make }) {
           ? Array.from({ length: 3 }).map((_, index) => (
               <SkeletonCard key={index} />
             ))
-          : cars.map((car) => (
-              <div className={styles.card} key={car?.highway_mpg}>
+          : cars.map((car, i) => (
+              <div className={styles.card} key={i}>
                 <Image
                   src={carImage}
                   className={styles.card__image}

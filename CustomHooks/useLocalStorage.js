@@ -13,8 +13,11 @@ function useLocalStorage(key, initialValue) {
 }
 
 function getLocalStorageValue(key, initialValue){
-    const itemFromStorage = localStorage.getItem(key);
-    return itemFromStorage ? JSON.parse(itemFromStorage) : initialValue;
+
+    if(window !== "undefined"){
+        const itemFromStorage = localStorage.getItem(key);
+        return itemFromStorage ? JSON.parse(itemFromStorage) : initialValue;
+    }
 }
 
 export default useLocalStorage;
