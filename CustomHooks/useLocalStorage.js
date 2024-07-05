@@ -14,7 +14,7 @@ function useLocalStorage(key, initialValue) {
 
 function getLocalStorageValue(key, initialValue){
 
-    if(window !== "undefined"){
+    if(typeof window !== "undefined"){
         const itemFromStorage = localStorage.getItem(key);
         return itemFromStorage ? JSON.parse(itemFromStorage) : initialValue;
     }
