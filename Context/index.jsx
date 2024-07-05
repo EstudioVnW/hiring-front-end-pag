@@ -40,7 +40,6 @@ export function AppWrapper({ children }) {
     } else {
       favoriteCars.pop(car);
     }
-    localStorage.setItem("cars", JSON.stringify(favorites));
     setFavorites(favoriteCars);
   }
 

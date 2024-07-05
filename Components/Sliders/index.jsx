@@ -54,11 +54,6 @@ export default function Sliders({ make }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const favoritos = JSON.parse(localStorage.getItem("cars"));
-    setFavorites(favoritos);
-  },[setFavorites]);
-
-  useEffect(() => {
     async function fetchCars() {
       const response = await getCars({ make });
       setCars(response);

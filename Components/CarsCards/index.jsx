@@ -9,13 +9,6 @@ import { useEffect } from "react";
 export default function CarsCards() {
   const { handleFavorite, favorites, handleSelectedCar, setFavorites  } = useAppContext();
 
- useEffect(() => {
-  const favoritos = JSON.parse(localStorage.getItem("cars")) || [];
-  if (favoritos) {
-    setFavorites(favoritos);
-  }
-}, [setFavorites]);
-
   return (
     <section className={styles.carsCards}>
       <div className={styles.carsCards__wrapper}>
