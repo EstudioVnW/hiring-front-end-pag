@@ -20,7 +20,7 @@ _Technologies_
 
 ### How to use
 
-- git clone https://github.com/12Gustavo21/Spooky-blog.git or download the zip
+- git clone https://github.com/12Gustavo21/hiring-front-end-pag.git or download the zip
 - npm install or yarn install
 - code . (if you use VSCode)
 - npm run dev or yarn dev
