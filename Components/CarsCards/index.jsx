@@ -4,9 +4,15 @@ import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import { useAppContext } from "@/Context";
 import carImage from "@/public/car.png";
+import { useEffect } from "react";
 
 export default function CarsCards() {
-  const { handleFavorite, favorites, handleSelectedCar  } = useAppContext();
+  const { handleFavorite, favorites, handleSelectedCar, setFavorites  } = useAppContext();
+
+  useEffect(() => {
+    const favoritos = JSON.parse(localStorage.getItem("cars"));
+    setFavorites(favoritos);
+  },[setFavorites]);
 
   return (
     <section className={styles.carsCards}>

@@ -12,7 +12,7 @@ import { useAppContext } from "@/Context";
 import SkeletonCard from "@/Components/SkeletonCard/index"; 
 
 export default function Sliders({ make }) {
-  const { handleFavorite, favorites, handleSelectedCar  } = useAppContext();
+  const { handleFavorite, favorites, handleSelectedCar, setFavorites } = useAppContext();
 
   const settings = {
     dots: true,
@@ -52,6 +52,11 @@ export default function Sliders({ make }) {
 
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const favoritos = JSON.parse(localStorage.getItem("cars"));
+    setFavorites(favoritos);
+  },[setFavorites]);
 
   useEffect(() => {
     async function fetchCars() {
