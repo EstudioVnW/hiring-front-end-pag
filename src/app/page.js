@@ -1,8 +1,12 @@
-//components
-import Cars from "./car";
+import { lazy, Suspense } from "react";
 
-//styles
+//Styles
 import styles from "./page.module.sass";
+
+//Components
+// import Cars from "./car";
+import Loading from "./assets/components/loading";
+const Cars = lazy(() => import("./car"));
 
 export default function Home() {
   return (
@@ -16,13 +20,19 @@ export default function Home() {
         </section>
         <section>
           <h2 className={styles.model__title}>Toyota</h2>
-          <Cars model="corolla" />
+          <Suspense fallback={<Loading />}>
+            <Cars model="corolla" />
+          </Suspense>
 
           <h2 className={styles.model__title}>Volkswagen</h2>
-          <Cars model="taos" />
+          <Suspense fallback={<Loading />}>
+            <Cars model="taos" />
+          </Suspense>
 
           <h2 className={styles.model__title}>Chevrolet</h2>
-          <Cars model="cruze" />
+          <Suspense fallback={<Loading />}>
+            <Cars model="cruze" />
+          </Suspense>
         </section>
       </section>
     </>

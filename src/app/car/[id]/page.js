@@ -2,6 +2,7 @@
 
 //Components
 import useSpecificCar from "../../assets/components/getSpecificCar";
+import Loading from "../../assets/components/loading";
 
 //Next
 import Link from "next/link";
@@ -22,7 +23,7 @@ export default function CarDetails({ params }) {
     setCar(null);
   }
 
-  if (!car) return <p>Loading...</p>;
+  if (!car) return <Loading />;
 
   return (
     <>
