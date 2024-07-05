@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body className={`${GeistSans.className} ${GeistMono.className}`}>
         <Header />
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );
