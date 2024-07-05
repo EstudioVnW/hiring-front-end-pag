@@ -27,4 +27,4 @@ npm run build
 ```
 
 ## 💻 Online Page:
-link: https://main--vip-cars.netlify.app
+link: https://vip-cars.netlify.app
