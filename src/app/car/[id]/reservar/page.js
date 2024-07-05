@@ -1,10 +1,16 @@
 "use client";
 
+import { useEffect } from "react";
+
 //Components
 import useSpecificCar from "../../../assets/components/getSpecificCar";
 
 //Styles
 import styles from "./page.module.sass";
+
+//AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Page({ params }) {
   const { id } = params;
@@ -15,10 +21,20 @@ export default function Page({ params }) {
     history.back();
   }
 
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
+
   return (
     <>
       <section className={styles.reservar__hero}>
-        <div onClick={() => history.back()} className={styles.goBack}>
+        <div
+          onClick={() => history.back()}
+          className={styles.goBack}
+          data-aos="fade-right"
+        >
           <svg
             stroke="#f9f9f9"
             fill="#f9f9f9"
@@ -30,23 +46,44 @@ export default function Page({ params }) {
           </svg>
           <p>Voltar</p>
         </div>
-        <div className={styles.reservar__hero__title}>
+        <div className={styles.reservar__hero__title} data-aos="fade-up">
           <h1>Voce está reservando o carro: {car?.model}</h1>
         </div>
       </section>
       <section className={styles.reservar__details}>
-        <h2>{car?.model} tem as seguintes características:</h2>
-        <p>Classe: {car?.class}</p>
-        <p>City MPG: {car?.city_mpg}</p>
-        <p>Ano de fabricação: {car?.year}</p>
-        <p>Para mais informações, volte para a página anterior</p>
+        <h2 data-aos="fade-up">
+          {car?.model} tem as seguintes características:
+        </h2>
+        <p data-aos="fade-up" data-aos-delay="200">
+          Classe: {car?.class}
+        </p>
+        <p data-aos="fade-up" data-aos-delay="400">
+          City MPG: {car?.city_mpg}
+        </p>
+        <p data-aos="fade-up" data-aos-delay="600">
+          Ano de fabricação: {car?.year}
+        </p>
+        <p data-aos="fade-up" data-aos-delay="800">
+          Para mais informações, volte para a página anterior
+        </p>
       </section>
       <section className={styles.reservar__form}>
         <form onSubmit={handleReservar}>
-          <label htmlFor="name">Nome:</label>
-          <input type="text" id="name" name="name" required />
-          <label htmlFor="phone">Telefone:</label>
+          <label data-aos="fade-up" htmlFor="name">
+            Nome:
+          </label>
           <input
+            data-aos="fade-up"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+          <label data-aos="fade-up" htmlFor="phone">
+            Telefone:
+          </label>
+          <input
+            data-aos="fade-up"
             type="tel"
             id="phone"
             name="phone"
@@ -54,8 +91,12 @@ export default function Page({ params }) {
             maxLength="11"
             required
           />
-          <label htmlFor="cpf">CPF:</label>
+          <label data-aos="fade-up" htmlFor="cpf">
+            CPF:
+          </label>
           <input
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
             type="text"
             id="cpf"
             name="cpf"
@@ -63,8 +104,11 @@ export default function Page({ params }) {
             maxLength="11"
             required
           />
-          <label htmlFor="birth">Data de nascimento:</label>
+          <label data-aos="fade-up" htmlFor="birth">
+            Data de nascimento:
+          </label>
           <input
+            data-aos="fade-up"
             type="date"
             id="birth"
             name="birth"
@@ -72,9 +116,7 @@ export default function Page({ params }) {
             maxLength="8"
             required
           />
-          <button type="submit">
-            Reservar
-          </button>
+          <button type="submit" data-aos="fade-up" data-aos-anchor-placement="top-bottom">Reservar</button>
         </form>
       </section>
     </>
