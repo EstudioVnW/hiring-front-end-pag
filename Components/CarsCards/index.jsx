@@ -16,8 +16,8 @@ export default function CarsCards() {
           {favorites.length === 0 ? (
             <p className={styles.carsCards__noFavorites}>Você não tem nenhum carro nos favoritos.</p>
           ) : (
-            favorites.map((car) => (
-              <div className={styles.carsCards__card} key={car?.highway_mpg}>
+            favorites.map((car, i) => (
+              <div className={styles.carsCards__card} key={i}>
                 <Image
                   src={carImage}
                   className={styles.carsCards__image}
