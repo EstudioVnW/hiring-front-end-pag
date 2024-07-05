@@ -1,0 +1,272 @@
+
+
+@mixin buttonPrimary (){
+  cursor: pointer;
+  padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    &:hover {
+      background-color: #046ddd;
+      color: white; 
+      border: none;
+      
+    }
+}
+
+@mixin buttonSecundary(){
+    background-color: gray;
+    &:hover{
+      background-color: rgb(116, 115, 115);
+    }
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+@mixin Card (){
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-evenly;
+
+}
+
+@mixin SinglePage(){
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width: 98vw;
+  height: 78vh;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+}
+
+//estilização da header
+header{
+  background-color: black;
+  height: 15vh;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+nav {
+color: white;
+display: flex;
+align-items: center;
+a{
+  color: white
+}
+ ul{
+  width: 60vw;
+  display: flex;
+  justify-content: space-evenly;
+ }
+li {
+  list-style: none;
+}
+
+};
+
+//estilizaçã da Home/Main
+.hero{
+  height: 90vh;
+  background-image: url('../../public/imagens/fundo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+  h1{
+    width: 50%;
+    height: 60%;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    
+  }
+}
+main{
+  section{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+}
+
+
+
+.card1 {
+  @include Card;
+
+  div{
+    display: flex;
+    align-items: center;
+  }
+
+  p{
+    width: 80%;
+    text-align: center;
+  }
+
+}
+.card2 {
+  @include Card;
+  background-color: rgb(163, 173, 180);
+
+  div{
+    display: flex;
+    align-items: center;
+  }
+
+  p{
+    width: 80%;
+    text-align: center;
+  }
+
+}
+
+.card3 {
+  @include Card;
+
+  div{
+    display: flex;
+    align-items: center;
+  }
+
+  p{
+    width: 80%;
+    text-align: center;
+  }
+
+}
+
+
+
+button{
+  @include buttonPrimary();
+  
+  }
+//display: none
+.cardfav{
+  display: none;
+}
+.saved{
+  display: none;
+}
+
+.idUL{
+  li {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+  }
+}
+
+//estilização do Form
+.CardForm{
+  display: flex;
+ flex-direction: column;
+ height: 78vh;
+ justify-content: center;
+
+ form{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 30vw;
+}
+  input{
+    padding: 8px;
+  }
+
+ div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 60%;
+
+ }
+}
+
+
+
+
+//estilizaçao do SinglePage Fiat
+
+.PageFiat{
+  @include SinglePage;
+  section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+  //estilização da SinglePage Jeep
+  .PageJeep{
+    @include SinglePage;
+    section{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+}
+
+ //estilização button das SinglePage
+ .buttonSingle{
+  @include buttonSecundary
+ }
+ //estilização da caixa de informaçao dos carros 
+.caixaInfo{
+  width: 60%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+//estilização da SinglePage BMW
+.PageBMW{
+  @include SinglePage();
+  section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+//estilização Favoritos
+
+.Favoritos{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 78vh;
+  .idUL{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 20%;
+  }
+}
+
+//h1 do Favoritos
+.fav{
+  margin-top: 30px;
+  margin-left: 30px;
+}
