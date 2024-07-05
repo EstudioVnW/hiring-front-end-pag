@@ -6,12 +6,13 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import cross from "@/public/cross.jpg";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getCars } from "@/Services/getCars";
 
 const mock = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-export default function Sliders() {
-  var settings = {
+export default function Sliders({make}) {
+  const settings = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -45,43 +46,40 @@ export default function Sliders() {
     ],
   };
 
-  const [clicked, setClicked] = useState(Array(mock.length).fill(false));
+  const [cars,setCars]= useState([])
+  const [loading, setLoading] = useState(true)
 
-  const handleHeartClick = (index) => {
-    setClicked((prev) => {
-      const newClicked = [...prev];
-      newClicked[index] = !newClicked[index];
-      return newClicked;
-    });
-  };
+  useEffect(() => {
+    async function fetchCars() {
+      const response = await getCars({ make });
+      setCars(response);
+    }
+    fetchCars()
+    setLoading(false)
+  }, [make]);
 
   return (
     <>
-      <h2 className={styles.brand}>Volkswagen</h2>
+      <h2 className={styles.brand}>{make}</h2>
       <Slider {...settings} className={styles.slider}>
-        {mock.map((item, index) => (
-          <div className={styles.card} key={item}>
-            <Image src={cross} className={styles.card__image} />
+        {cars.map((car) => (
+          <div className={styles.card} key={car?.id}>
+            <Image src={cross} className={styles.card__image}  alt={`imagem do ${car?.model}`}/>
             <div className={styles.card__containerInfo}>
-              <h3>CROSS</h3>
-              <p>2015</p>
+              <h3>{car?.model}</h3>
+              <p>{car?.year}</p>
             </div>
             <div className={styles.card__buttons}>
               <button className={styles.card__about}>Saiba mais</button>
               <button
-                className={styles.card__favorite}
-                onClick={() => handleHeartClick(index)}
-              >
-                {clicked[index] ? (
-                  <FaHeart color="red" />
-                ) : (
-                  <FaRegHeart />
-                )}
+                className={styles.card__favorite}>
+               <FaRegHeart />
               </button>
             </div>
           </div>
         ))}
       </Slider>
+      {loading && <p className={styles.loading}>Loading...</p>}
     </>
   );
 }
