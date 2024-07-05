@@ -8,10 +8,12 @@ import cross from "@/public/cross.jpg";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { getCars } from "@/Services/getCars";
+import { useAppContext } from "@/Context";
+import SkeletonCard from "@/Components/SkeletonCard/index"; 
 
-const mock = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+export default function Sliders({ make }) {
+  const { handleFavorite, favorites, handleSelectedCar  } = useAppContext();
 
-export default function Sliders({make}) {
   const settings = {
     dots: true,
     infinite: false,
@@ -46,40 +48,53 @@ export default function Sliders({make}) {
     ],
   };
 
-  const [cars,setCars]= useState([])
-  const [loading, setLoading] = useState(true)
+  const [cars, setCars] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchCars() {
       const response = await getCars({ make });
       setCars(response);
+      setLoading(false);
     }
-    fetchCars()
-    setLoading(false)
+    fetchCars();
   }, [make]);
 
   return (
     <>
       <h2 className={styles.brand}>{make}</h2>
       <Slider {...settings} className={styles.slider}>
-        {cars.map((car) => (
-          <div className={styles.card} key={car?.id}>
-            <Image src={cross} className={styles.card__image}  alt={`imagem do ${car?.model}`}/>
-            <div className={styles.card__containerInfo}>
-              <h3>{car?.model}</h3>
-              <p>{car?.year}</p>
-            </div>
-            <div className={styles.card__buttons}>
-              <button className={styles.card__about}>Saiba mais</button>
-              <button
-                className={styles.card__favorite}>
-               <FaRegHeart />
-              </button>
-            </div>
-          </div>
-        ))}
+        {loading
+          ? Array.from({ length: 3 }).map((_, index) => (
+              <SkeletonCard key={index} />
+            ))
+          : cars.map((car) => (
+              <div className={styles.card} key={car?.highway_mpg}>
+                <Image
+                  src={cross}
+                  className={styles.card__image}
+                  alt={`imagem do ${car?.model}`}
+                />
+                <div className={styles.card__containerInfo}>
+                  <h3>{car?.model}</h3>
+                  <p>{car?.year}</p>
+                </div>
+                <div className={styles.card__buttons}>
+                  <button className={styles.card__about} onClick={() => handleSelectedCar(car)} >Saiba mais</button>
+                  <button
+                    className={styles.card__favorite}
+                    onClick={() => handleFavorite(car)}
+                  >
+                    {favorites.find((i) => i.model === car.model) ? (
+                      <FaHeart size={26} color="red" />
+                    ) : (
+                      <FaRegHeart size={26} />
+                    )}
+                  </button>
+                </div>
+              </div>
+            ))}
       </Slider>
-      {loading && <p className={styles.loading}>Loading...</p>}
     </>
   );
 }
