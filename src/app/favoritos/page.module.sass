@@ -45,6 +45,26 @@
     position: relative
     bottom: 1.25rem
 
+.remove__favorite
+  @include flex(row, center, center)
+  margin-left: 0.9375rem
+  width: 2.1875rem
+  height: 2.1875rem
+  z-index: 1
+  position: absolute
+  top: 1rem
+  left: .5rem
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) all .3s
+  cursor: pointer
+  color: #000
+  svg
+    position: relative
+    transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) all .3s
+    path
+      stroke: $red
+      fill: $red
+      transition: ease all .3s
+
 .img__skew
   display: inline-block
   border-radius: 1.25rem
@@ -59,7 +79,7 @@
   box-shadow: 0rem 0rem 0.625rem 0rem rgba(0,0,0,0.2)
   padding: 7.5rem 1.25rem 1.25rem 1.25rem
   border-radius: 1.25rem
-  background: #252525
+  background: $secondary-bg-color
   margin: -7.5rem 0rem 0rem 0rem
   line-height: 1.1875rem
   font-size: 0.875rem
