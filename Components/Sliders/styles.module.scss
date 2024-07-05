@@ -72,3 +72,12 @@
 .loading{
   font-size: 2rem;
 }
+
+@media (max-width: 768px) {
+  .slider{
+    width: 94vw;
+  }
+  .brand{
+    margin-left: .8rem;
+  }
+}
