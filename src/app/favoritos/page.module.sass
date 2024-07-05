@@ -1,0 +1,93 @@
+@import '../assets/sass/mixins'
+@import '../assets/sass/variables'
+
+.fav__container
+  @include flex(column, center, center)
+  padding: 1.25rem 0
+  box-sizing: border-box
+
+.fav__title
+  @include flex(row, center, center)
+  margin: 0 0 1rem 0
+  font-size: 2rem
+  font-weight: 700
+  color: #f9f9f9
+
+.fav__cards__container
+  @include flex(row, center, center)
+  flex-wrap: wrap
+  padding: 1.25rem 0
+  box-sizing: border-box
+
+.fav__no__favorites
+  @include flex(column, center, center)
+  margin: 0 0 1rem 0
+  font-size: 1.5rem
+  font-weight: 700
+  color: #f9f9f9
+
+.fav__card
+  width: 240px
+  margin: 0 20px 0 20px
+  text-align: center
+
+.img__container
+  height: 230px
+  width: 200px
+  overflow: hidden
+  border-radius: 0px 0px 20px 20px
+  display: inline-block
+  img
+    transform: skew(0deg, -13deg)
+    object-fit: cover
+    object-position: bottom
+    position: relative
+    bottom: 20px
+
+.img__skew
+  display: inline-block
+  border-radius: 20px
+  overflow: hidden
+  transform: skew(0deg, 13deg)
+  font-size: 0px
+  margin: 30px 0px 0px 0px
+  height: 250px
+  width: 200px
+
+.card__content
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2)
+  padding: 120px 20px 20px 20px
+  border-radius: 20px
+  background: #252525
+  margin: -120px 0px 0px 0px
+  line-height: 19px
+  font-size: 14px
+  h3
+    margin: 20px 0px 10px 0px
+    color: $primary-blue
+    font-size: 18px
+    text-transform: uppercase
+
+.card__details
+  @include flex(row, center, center)
+  margin: 20px 0px 0px 0px
+  button
+    width: 100%
+    background-color: #a8d0e6
+    border-radius: 100px
+    color: #171794
+    cursor: pointer
+    display: inline-block
+    padding: 7px 20px
+    text-align: center
+    text-decoration: none
+    transition: all 250ms
+    border: 0
+    font-size: 16px
+    user-select: none
+    -webkit-user-select: none
+    touch-action: manipulation
+
+    &:hover
+      box-shadow: rgba(0, 102, 204, .35) 0 -25px 18px -14px inset, rgba(0, 102, 204, .25) 0 1px 2px, rgba(0, 102, 204, .25) 0 2px 4px, rgba(0, 102, 204, .25) 0 4px 8px, rgba(0, 102, 204, .25) 0 8px 16px, rgba(0, 102, 204, .25) 0 16px 32px
+      transform: scale(1.05) rotate(-1deg)
