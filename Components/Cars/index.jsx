@@ -12,9 +12,9 @@ export default function Cars() {
             <div className={styles.carsContainer__dash}></div>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ut nulla cumque earum</p>
           </div>
-          <Sliders />
-          <Sliders />
-          <Sliders />
+          <Sliders make="Audi" />
+          <Sliders make="Ferrari" />
+          <Sliders make="Mitsubishi"/>
         </div>
     </section>
   )
