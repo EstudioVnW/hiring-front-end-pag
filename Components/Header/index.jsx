@@ -8,7 +8,7 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.header__wrapper}>
         <Link href="/">
-          <Image src={logo} className={styles.header__logo} />
+          <Image src={logo} className={styles.header__logo} alt="logo"/>
         </Link>
         <nav className={styles.header__nav}>
           <ul>

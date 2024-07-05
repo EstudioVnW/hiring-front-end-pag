@@ -11,7 +11,7 @@ export default function Footer() {
         <div className={styles.footer__wrapper}>
             <div className={styles.footer__container}>
             <div className={styles.footer__brand}>
-                <Image src={logo} className={styles.footer__logo}/>
+                <Image src={logo} className={styles.footer__logo} alt="logo"/>
                 <p>Na VIP Cars, oferecemos uma experiência de aluguel superior com veículos de alta qualidade. Dirija com estilo e conforto em qualquer viagem, com a garantia de um serviço VIP.</p>
             </div>
             <div className= {styles.footer__content}>
