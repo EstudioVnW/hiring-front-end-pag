@@ -92,7 +92,7 @@ export default function Sliders({ make }) {
                     className={styles.card__favorite}
                     onClick={() => handleFavorite(car)}
                   >
-                    {favorites.find((i) => i.model === car.model) ? (
+                    {favorites?.find((i) => i.model === car.model) ? (
                       <FaHeart size={26} color="red" />
                     ) : (
                       <FaRegHeart size={26} />
