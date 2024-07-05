@@ -8,8 +8,8 @@ const AppContext = createContext({});
 export function AppWrapper({ children }) {
     const router = useRouter();
 
-  const [favorites, setFavorites] = useState([]);
-  const [selectedCar, setSelectedCar] = useState({})
+  const [favorites, setFavorites] = useLocalStorage('cars', []);
+  const [selectedCar, setSelectedCar] = useLocalStorage('car', {})
 
 
     function handleSelectedCar(car) {

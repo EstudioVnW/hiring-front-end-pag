@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import logo from "@/public/logo.png";
-import UserBtn from "../UserBtn";
 import Link from "next/link";
 
 export default function Header() {
@@ -17,14 +16,10 @@ export default function Header() {
               <Link href="favorites">Favoritos</Link>
             </li>
             <li>
-              <a href="">Contratos</a>
-            </li>
-            <li>
-              <a href="">Saiba mais</a>
+              <a href="#contato">Contatos</a>
             </li>
           </ul>
         </nav>
-        <UserBtn />
       </div>
     </header>
   );

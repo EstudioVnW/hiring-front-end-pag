@@ -6,6 +6,10 @@
   -moz-box-shadow: 0px 3px 7px -1px rgba(0, 0, 0, 0.39);
   box-shadow: 0px 3px 7px -1px rgba(0, 0, 0, 0.39);
   width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: $bg-color-tertiary;
+  z-index: 999;
 
   &__wrapper {
     @include wrapper;
@@ -34,6 +38,20 @@
           font-size: 1.8rem;
           font-weight: 500;
           text-decoration: none;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 375px) {
+  .header {
+    &__nav{
+      ul{
+        gap: 1rem;
+        li{
+          a{
+            font-size: 1.5rem;
+          }
         }
       }
     }

@@ -69,15 +69,24 @@
   }
 }
 
-.loading{
+.loading {
   font-size: 2rem;
 }
 
 @media (max-width: 768px) {
-  .slider{
-    width: 94vw;
+  .slider {
+    width: 83vw;
+    
+    .card{
+      &__buttons{
+        gap: 10%;
+        button{
+          padding: .5rem;
+        }
+      }
+    }
   }
-  .brand{
-    margin-left: .8rem;
+  .brand {
+    margin-left: 0.8rem;
   }
 }

@@ -3,10 +3,10 @@ import styles from "./styles.module.scss";
 import Image from "next/image";
 import { FaHeart } from "react-icons/fa";
 import { useAppContext } from "@/Context";
-import cross from "@/public/cross.jpg";
+import carImage from "@/public/car.png";
 
 export default function CarsCards() {
-  const { favorites, handleFavorite } = useAppContext();
+  const { handleFavorite, favorites, handleSelectedCar  } = useAppContext();
 
   return (
     <section className={styles.carsCards}>
@@ -19,7 +19,7 @@ export default function CarsCards() {
             favorites.map((car) => (
               <div className={styles.carsCards__card} key={car?.highway_mpg}>
                 <Image
-                  src={cross}
+                  src={carImage}
                   className={styles.carsCards__image}
                   alt={`imagem do ${car?.model}`}
                 />
@@ -28,7 +28,7 @@ export default function CarsCards() {
                   <p>{car?.year}</p>
                 </div>
                 <div className={styles.carsCards__buttons}>
-                  <button className={styles.carsCards__about}>Saiba mais</button>
+                <button className={styles.carsCards__about} onClick={() => handleSelectedCar(car)} >Saiba mais</button>
                   <button onClick={() => handleFavorite(car)}>
                     <FaHeart size={26} color="red" />
                   </button>
