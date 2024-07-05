@@ -19,6 +19,10 @@ import Image from "next/image";
 // Images
 import carImage from "../assets/img/car-example.webp";
 
+//AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function Index({ model }) {
   const [cars, setCars] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
@@ -44,17 +48,23 @@ export default function Index({ model }) {
     const updatedFavoritos = favoritos.some((car) => car.id === id)
       ? favoritos.filter((car) => car.id !== id)
       : [...favoritos, cars.find((car) => car.id === id)];
-    
+
     setFavoritos(updatedFavoritos);
     localStorage.setItem("favoritos", JSON.stringify(updatedFavoritos));
   }
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
 
   return (
     <>
       <Carousel>
         {cars.map((car) => (
           <SwiperSlide key={car.id}>
-            <section className={styles.cards__container}>
+            <section className={styles.cards__container} data-aos="fade-up">
               <div className={styles.card}>
                 <div className={styles.card__wrapper}>
                   <div className={styles.card__color} />
