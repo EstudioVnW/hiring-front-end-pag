@@ -9,17 +9,17 @@
 }
 
 .slider {
-  width: 115rem;
+  width: 95vw;
+  max-width: 128rem;
     
   .card {
     background-color: $bg-color-primary;
     width: calc(100% - 1.5rem) !important;
     border-radius: 1rem;
-    height: 31rem;
     padding: 2%;
 
     &__image {
-      width: 26rem;
+      width: 100%;
       height: auto;
     }
 
@@ -39,7 +39,7 @@
       justify-content: center;
       gap: 15%;
       align-items: center;
-      margin-top: 8%;
+      margin-block: 1.5rem;
 
       button {
         cursor: pointer;
