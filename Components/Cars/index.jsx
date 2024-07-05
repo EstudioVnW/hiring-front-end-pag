@@ -8,14 +8,12 @@ export default function Cars() {
         <div className={styles.carsContainer__texts}>
           <h2>Alugar um carro nunca foi tão facil</h2>
           <div className={styles.carsContainer__dash}></div>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
-            ut nulla cumque earum
-          </p>
         </div>
-        <Sliders make="Audi" />
-        <Sliders make="toyota" />
-        <Sliders make="Mitsubishi" />
+        <div className={styles.carsContainer__carrossel}>
+          <Sliders make="Audi" />
+          <Sliders make="toyota" />
+          <Sliders make="Mitsubishi" />
+        </div>
       </div>
     </section>
   );

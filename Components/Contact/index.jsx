@@ -3,7 +3,7 @@ import { ImWhatsapp } from "react-icons/im";
 
 export default function Contact() {
   return (
-    <section className={styles.contact}>
+    <section className={styles.contact} id="contato">
       <div className={styles.contact__wrapper}>
         <div className={styles.contact__container}>
           <form className={styles.contact__form}>

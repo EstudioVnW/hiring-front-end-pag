@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import cross from "@/public/cross.jpg";
+import carImage from "@/public/car.png";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { getCars } from "@/Services/getCars";
@@ -73,7 +73,7 @@ export default function Sliders({ make }) {
           : cars.map((car) => (
               <div className={styles.card} key={car?.highway_mpg}>
                 <Image
-                  src={cross}
+                  src={carImage}
                   className={styles.card__image}
                   alt={`imagem do ${car?.model}`}
                 />
