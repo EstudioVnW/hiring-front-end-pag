@@ -13,7 +13,7 @@ export default function Header() {
         <nav className={styles.header__nav}>
           <ul>
             <li>
-              <Link href="favorites">Favoritos</Link>
+              <Link href="/favorites">Favoritos</Link>
             </li>
             <li>
              <Link href="/#contato">Contato</Link>
