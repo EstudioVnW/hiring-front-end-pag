@@ -8,7 +8,7 @@ const AppContext = createContext({});
 export function AppWrapper({ children }) {
     const router = useRouter();
 
-  const [favorites, setFavorites] = useLocalStorage('cars', []);
+  const [favorites, setFavorites] = useState([]);
   const [selectedCar, setSelectedCar] = useLocalStorage('car', {})
 
 
@@ -40,6 +40,7 @@ export function AppWrapper({ children }) {
     } else {
       favoriteCars.pop(car);
     }
+    localStorage.setItem("cars", JSON.stringify(favorites));
     setFavorites(favoriteCars);
   }
 
