@@ -1,0 +1,33 @@
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+
+.carsContainer {
+  @include center;
+  &__wrapper {
+    @include wrapper;
+    padding-block: 2rem;
+  }
+
+  &__texts {
+    text-align: center;
+    h2 {
+      font-size: 2.3rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__dash {
+    @include dash;
+  }
+}
+
+@media (max-width: 768px) {
+  .carsContainer{
+    &__carrossel {
+      @include center;
+      flex-direction: column;
+    }
+  }
+}

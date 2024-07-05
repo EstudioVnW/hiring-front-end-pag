@@ -1,0 +1,51 @@
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+
+.rent{
+    min-height: 80vh;
+    padding-block: 2rem;
+    @include center;
+    flex-direction: column;
+
+    &__title{
+        font-size: 2.6rem;
+        color: $text-color-secondary;
+    }
+
+    &__form{
+        width: 50%;
+        min-width: 45rem;
+        @include center;
+        flex-direction: column;
+
+        input{
+            @include input;
+        }
+    }
+
+    &__button{
+      margin-top: 3rem;
+      cursor: pointer;
+      background-color: transparent;
+      border: 0.1rem solid $text-color-secondary;
+      padding: 0.3rem;
+      padding-inline: 2.5rem;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      color: $text-color-secondary;
+
+      &:hover {
+        color: $text-color-primary;
+        background-color: $bg-color-secondary;
+      }
+    }
+}
+
+@media (max-width: 768px) {
+    .rent {
+      &__form{
+        width: 90%;
+        min-width: 28rem;
+      }
+    }
+  }
