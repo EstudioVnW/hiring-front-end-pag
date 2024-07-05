@@ -20,7 +20,7 @@ export function AppWrapper({ children }) {
   function handleFavorite(car) {
     const favoriteCars = [...favorites];
 
-    const newCar = favoriteCars.find((i) => i.model === car.model);
+    const newCar = favoriteCars?.find((i) => i.model === car.model);
 
     if (!newCar) {
       favoriteCars.push({
