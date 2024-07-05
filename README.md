@@ -25,6 +25,14 @@ _Technologies_
 - code . (if you use VSCode)
 - npm run dev or yarn dev
 
+### Creating a .env.local file
+
+- Create a .env.local file in the root of the project
+- Create the variable: NEXT_PUBLIC_API_URL
+- Go to the link: https://api-ninjas.com
+- Create an account (if you don't have one) and get the API key 
+- Add the API key to the variable NEXT_PUBLIC_API_URL
+
 ### How to build
 
 - npm run build or yarn build
