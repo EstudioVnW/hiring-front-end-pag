@@ -13,12 +13,12 @@ export default function Banner() {
                 <div className={styles.banner__dash}></div>
                 <p>Veículos de Qualidade para Todas as Suas Necessidades de Viagem, Garantindo Conforto e Segurança em Cada Quilômetro Percorrido.</p>
                 <div className={styles.banner__buttons}>
-                    <button> <Image src={imgApple} /> </button>
-                    <button> <Image src={imgGoogle} /> </button>
+                    <button> <Image src={imgApple}  alt="icone applestore"/> </button>
+                    <button> <Image src={imgGoogle} alt="icone googleplay"/> </button>
                 </div>
             </div>
             <picture className={styles.banner__imgCars}>
-                <Image src={imgBanner} />
+                <Image src={imgBanner} alt="lancer preto com fundo azul" />
             </picture>
         </div>
     </section>
