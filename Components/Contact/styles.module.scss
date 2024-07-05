@@ -1,235 +1,242 @@
 @import '@/styles/mixins.scss';
 @import '@/styles/variables.scss';
 
-.contact{
+.contact {
 
-    &__container{
-        @include center;
-        flex-direction: row-reverse;
-       gap: 18rem
+  &__container {
+    @include center;
+    flex-direction: row-reverse;
+    gap: 18rem;
+  }
+
+  &__wrapper {
+    @include wrapper;
+    height: 70rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding-inline: 2%;
+  }
+
+  &__dash {
+    @include dash;
+  }
+
+  &__form {
+    width: 40rem;
+    height: 51rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: $bg-color-primary;
+    flex-direction: column;
+    border-radius: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-top: 2rem;
     }
+
+    input, select, textarea {
+      @include input;
+    }
+
+    textarea {
+      padding: 2.3rem;
+    }
+
+    button {
+      font-size: 2rem;
+      padding: 1rem;
+      padding-inline: 2rem;
+      cursor: pointer;
+      background-color: $bg-color-tertiary;
+      border: .2rem solid rgb(224, 224, 224);
+      border-radius: 1rem;
+      margin-top: 1.3rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+        color: $text-color-primary;
+        background-color: $bg-color-secondary;
+        border-color: $bg-color-secondary;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      text-align: center;
+      width: 40rem;
+      font-size: 2.5rem;
+    }
+  }
+
+  &__sac, &__whatsapp {
+    @include center;
+    text-decoration: none;
+    color: $text-color-tertiary;
+    gap: 1rem;
+    width: 15em;
+    padding: 1.5rem;
+    font-size: 1.7rem;
+    background-color: $bg-color-primary;
+    border: .2rem solid rgb(224, 224, 224);
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
     
-    &__wrapper{
-        @include wrapper;
-        height: 70rem;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 4rem;
-        padding-inline: 2%;
+    h3 {
+      font-weight: 500;
     }
 
-    &__dash{
-        @include dash;    
-    } 
-
-    &__form{
-        width: 40rem;
-        height: 51rem;
-        padding: 1rem;
-        display: flex;
-        align-items: center;
-       background-color: $bg-color-primary;
-       flex-direction: column;
-       border-radius: 2rem;
-
-       h2{
-        font-size: 2rem;
-        font-weight: 600;
-        margin-top: 2rem;
-       }
-       input{
-        @include input;
-       }
-       select{
-        @include input;
-       }
-       textarea{
-        @include input;
-        padding: 2.3rem;
-        
-       }
-       button{
-        font-size: 2rem;
-        padding: 1rem;
-        padding-inline: 2rem;
-        cursor: pointer;
-        background-color: $bg-color-tertiary;
-        border: .2rem solid rgb(224, 224, 224);
-        border-radius: 1rem;
-        margin-top: 1.3rem;
-       }
+    p {
+      font-weight: 500;
     }
 
-    &__info{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        h2{
-            text-align: center;
-            width: 40rem;
-            font-size: 2.5rem;
-        }
+    &:hover {
+      transform: scale(1.05);
+      color: $text-color-primary;
+      background-color: $bg-color-secondary;
+      border-color: $bg-color-secondary;
     }
-
-    &__sac{
-        @include center;
-        text-decoration: none;
-        color: $text-color-tertiary;
-        gap: 1rem;
-        width: 15em;
-        padding: 1.5rem;
-        font-size: 1.7rem;
-        background-color: $bg-color-primary;
-        border: .2rem solid rgb(224, 224, 224);
-        border-radius: 1rem;
-        margin-bottom: 2rem;
-        h3{
-            font-weight: 500;
-        }
-        p{
-            font-weight: 500;
-        }
-    }
-    &__whatsapp{
-        @include center;
-        cursor: pointer;
-        gap: 1rem;
-        width: 15em;
-        padding: 1.5rem;
-        font-size: 1.7rem;
-        background-color: $bg-color-primary;
-        border: .2rem solid rgb(224, 224, 224);
-        border-radius: 1rem;
-        
-        h3{
-            font-weight: 400;
-        }
-    }
+  }
 }
 
 @media (max-width: 1200px) {
-    .contact {
-        margin-top: 5rem;
-      &__container {
-        gap: 10rem;
+  .contact {
+    margin-top: 5rem;
+
+    &__container {
+      gap: 10rem;
+    }
+
+    &__form {
+      width: 35rem;
+
+      h2 {
+        font-size: 1.8rem;
       }
-  
-      &__form {
-        width: 35rem;
-        h2 {
-          font-size: 1.8rem;
-        }
-        button {
-          font-size: 1.8rem;
-        }
+
+      button {
+        font-size: 1.8rem;
       }
-  
-      &__info {
-        margin-bottom: 3rem;
-        h2 {
-          font-size: 2rem;
-        }
-  
-        &__sac,
-        &__whatsapp {
-          width: 100%;
-          font-size: 1.6rem;
-          padding: 1.2rem;
-        }
-        
-        h3,
-        p {
-          font-size: 1.6rem;
-        }
+    }
+
+    &__info {
+      margin-bottom: 3rem;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      &__sac, &__whatsapp {
+        width: 100%;
+        font-size: 1.6rem;
+        padding: 1.2rem;
+      }
+
+      h3, p {
+        font-size: 1.6rem;
       }
     }
   }
+}
 
-  @media (max-width: 768px) {
-    .contact {
-      &__container {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
+@media (max-width: 768px) {
+  .contact {
+
+    &__container {
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    &__form {
+      width: 100%;
+      max-width: 30rem;
+
+      h2 {
+        font-size: 1.6rem;
       }
-  
-      &__form {
+
+      button {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__info {
+
+      h2 {
         width: 100%;
         max-width: 30rem;
-        h2 {
-          font-size: 1.6rem;
-        }
-        button {
-          font-size: 1.6rem;
-        }
+        font-size: 1.8rem;
       }
-  
-      &__info {
-        h2 {
-          width: 100%;
-          max-width: 30rem;
-          font-size: 1.8rem;
-        }
-  
-        &__sac,
-        &__whatsapp {
-          width: 100%;
-          font-size: 1.4rem;
-          padding: 1rem;
-        }
-  
-        h3,
-        p {
-          font-size: 1.4rem;
-        }
-      }
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .contact {
-      &__wrapper {
-        height: auto;
-        padding-inline: 1rem;
-      }
-  
-      &__container {
-        gap: 1rem;
-      }
-  
-      &__form {
+
+      &__sac, &__whatsapp {
         width: 100%;
-        h2 {
-          font-size: 1.4rem;
-        }
-        input,
-        select,
-        textarea {
-          font-size: 1rem;
-        }
-        button {
-          font-size: 1.4rem;
-        }
+        font-size: 1.4rem;
+        padding: 1rem;
       }
-  
-      &__info {
-        h2 {
-          font-size: 1.6rem;
-        }
-  
-        &__sac,
-        &__whatsapp {
-          width: 100%;
-          font-size: 1.2rem;
-          padding: 0.8rem;
-        }
-  
-        h3,
-        p {
-          font-size: 1.2rem;
-        }
+
+      h3, p {
+        font-size: 1.4rem;
       }
     }
   }
+}
+
+@media (max-width: 480px) {
+  .contact {
+
+    &__wrapper {
+      height: auto;
+      padding-inline: 1rem;
+    }
+
+    &__container {
+      gap: 1rem;
+    }
+
+    &__form {
+      width: 100%;
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      input, select, textarea {
+        font-size: 1rem;
+      }
+
+      button {
+        font-size: 1.4rem;
+      }
+    }
+
+    &__info {
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      &__sac, &__whatsapp {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 0.8rem;
+      }
+
+      h3, p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

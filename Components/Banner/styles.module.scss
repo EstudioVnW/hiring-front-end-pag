@@ -3,15 +3,6 @@
 
 .banner{
     background-color: rgb(250, 250, 250);
-   &__content{
-    max-width: 50rem;
-        h1{
-            font-size: 4rem;
-        }
-        p{
-            font-size: 1.5rem;
-        }
-   }
 
     &__wrapper{
         @include wrapper;
@@ -23,10 +14,27 @@
         gap: 4rem;
         padding-inline: 2%;
     }
-        &__dash{
-            @include dash;
-            margin-left: 0;
-        }  
+
+    &__content{
+        max-width: 50rem;
+        opacity: 0;
+        transform: translateX(-100%);
+        animation: fadeInFromLeft 1s forwards ease-out;
+        animation-delay: 0.3s;
+
+        h1{
+            font-size: 4rem;
+        }
+
+        p{
+            font-size: 1.5rem;
+        }
+    }
+
+    &__dash{
+        @include dash;
+        margin-left: 0;
+    }  
 
     &__buttons{
         display: flex;
@@ -37,6 +45,11 @@
             cursor: pointer;
             background: none;
             border: none;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
 
             img{
                 width: 15rem;
@@ -49,7 +62,25 @@
         img{
             width: 60rem;
             height: auto;
+            opacity: 0;
+            transform: translateX(100%);
+            animation: fadeInFromRight 1s forwards ease-out;
+            animation-delay: 0.5s;
         }
+    }
+}
+
+@keyframes fadeInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
@@ -70,21 +101,19 @@
         }
       }
     }
-  }
+}
   
- 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .banner {
       &__wrapper {
         flex-direction: column;
         height: auto;
         gap: 2rem;
-        
       }
       &__dash{
-            @include dash;
-        }  
-  
+        @include dash;
+    } 
+      
       &__content {
         margin-top: 1.5rem;
         text-align: center;
@@ -112,9 +141,9 @@
         }
       }
     }
-  }
+}
   
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .banner {
       &__wrapper {
         gap: 1rem;
@@ -144,4 +173,4 @@
         }
       }
     }
-  }
+}

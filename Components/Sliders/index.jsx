@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import cross from "@/public/cross.jpg";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
+import { useState } from "react";
 
 const mock = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -44,26 +45,43 @@ export default function Sliders() {
     ],
   };
 
+  const [clicked, setClicked] = useState(Array(mock.length).fill(false));
+
+  const handleHeartClick = (index) => {
+    setClicked((prev) => {
+      const newClicked = [...prev];
+      newClicked[index] = !newClicked[index];
+      return newClicked;
+    });
+  };
+
   return (
     <>
       <h2 className={styles.brand}>Volkswagen</h2>
       <Slider {...settings} className={styles.slider}>
-      {mock.map((item) => (
-        <div className={styles.card} key={item}>
-          <Image src={cross} className={styles.card__image} />
-          <div className={styles.card__containerInfo}>
-            <h3>CROSS</h3>
-            <p>2015</p>
+        {mock.map((item, index) => (
+          <div className={styles.card} key={item}>
+            <Image src={cross} className={styles.card__image} />
+            <div className={styles.card__containerInfo}>
+              <h3>CROSS</h3>
+              <p>2015</p>
+            </div>
+            <div className={styles.card__buttons}>
+              <button className={styles.card__about}>Saiba mais</button>
+              <button
+                className={styles.card__favorite}
+                onClick={() => handleHeartClick(index)}
+              >
+                {clicked[index] ? (
+                  <FaHeart color="red" />
+                ) : (
+                  <FaRegHeart />
+                )}
+              </button>
+            </div>
           </div>
-          <div className={styles.card__buttons}>
-            <button className={styles.card__about}>Saiba mais</button>
-            <button>
-              <FaRegHeart />
-            </button>
-          </div>
-        </div>
-      ))}
-    </Slider>
+        ))}
+      </Slider>
     </>
   );
 }

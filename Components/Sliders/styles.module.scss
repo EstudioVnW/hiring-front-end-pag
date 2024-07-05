@@ -1,22 +1,26 @@
 @import "@/styles/mixins.scss";
 @import "@/styles/variables.scss";
 
-
-.brand{
-    font-size: 2.4rem;
-    font-weight: 600;
-    margin-top: 3%;
+.brand {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-top: 3%;
 }
 
 .slider {
-  width: 95vw;
+  width: 90vw;
   max-width: 128rem;
-    
+
   .card {
     background-color: $bg-color-primary;
     width: calc(100% - 1.5rem) !important;
     border-radius: 1rem;
     padding: 2%;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
 
     &__image {
       width: 100%;
@@ -45,15 +49,22 @@
         cursor: pointer;
         background-color: transparent;
         border: none;
-        padding: .3rem;
+        padding: 0.3rem;
         padding-inline: 1.5rem;
         font-size: 1.8rem;
-      }     
-    }
-    &__about{
-        border: 2px solid rgb(180, 180, 180) !important; 
-        
-        border-radius: 1rem;
+        transition: all 0.3s ease;
+
+        &.card__about:hover {
+          color: $text-color-primary;
+          background-color: $bg-color-secondary;
+          border: 2px solid $bg-color-secondary !important;
+        }
       }
+    }
+
+    &__about {
+      border: 2px solid rgb(180, 180, 180) !important;
+      border-radius: 1rem;
+    }
   }
 }
