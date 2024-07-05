@@ -16,7 +16,7 @@ export default function Header() {
               <Link href="favorites">Favoritos</Link>
             </li>
             <li>
-              <a href="#contato">Contatos</a>
+             <Link href="/#contato">Contato</Link>
             </li>
           </ul>
         </nav>
