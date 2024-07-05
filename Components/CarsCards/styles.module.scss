@@ -1,0 +1,85 @@
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+
+.carsCards {
+  min-height: 100vh;
+
+  &__wrapper {
+    @include wrapper;
+    padding-block: 2rem;
+  }
+
+  &__title {
+    font-size: 2.6rem;
+    margin-top: 2rem;
+    color: $text-color-secondary;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  &__card {
+    background-color: $bg-color-primary;
+    width: 28rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__containerInfo {
+    margin-top: 5%;
+    h3 {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15%;
+    align-items: center;
+    margin-top: 8%;
+
+    button {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      padding: 0.3rem;
+      padding-inline: 1.5rem;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        color: $text-color-primary;
+        background-color: $bg-color-secondary;
+        border-color: $bg-color-secondary !important;
+      }
+    }
+  }
+
+  &__about {
+    border: 2px solid rgb(180, 180, 180) !important;
+    border-radius: 1rem;
+  }
+
+  &__noFavorites {
+    font-size: 2rem;
+    color: $text-color-secondary;
+    text-align: center;
+    margin-top: 2rem;
+  }
+}

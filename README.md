@@ -1,55 +1,30 @@
 
-## Objetivo
-Construir uma aplicação web em NextJS que tenha o comportamento de uma locadora de carros, contendo a página Home, Favoritos, Single page do carro e formulário de reserva com o carro escolhido.
+# Vip Cars
 
-## Como começar
-Dar um fork no projeto, clonar o repositório em sua máquina local e criar um branch novo para o seu código.
+Site de alugueis de carro 
 
+## Vai na Web - Challenge
 
-## Regras de negócio
-•	Ao acessar a home, trazer a listagem de carros, no estilo carrosel, separadas por pelo menos 3 categorias de marcas (ex: audi, toyota, bmw).
+<img width ='800px' src ='https://cdn.discordapp.com/attachments/334770078069293056/1258787603843514449/image.png?ex=668950cf&is=6687ff4f&hm=f2e741fb3ec8d1f99fc8e2fe35862dee649050580f1a2c5deddfd87d4a636a47&' />
 
-•	Na listagem do carro, deverá ter uma opção para adicionar aos favoritos e um botão para saber mais (Single Page).
+### Requirements
+- Node.js (v20.15.0) or higher
+- NPM (v10.8.1)
 
-•	Na Single Page, deverá conter as informações do carro escolhido, opção para favoritar e botão para reservar (Formulário de reserva).
+### How to use
 
-•	Na página de formulário de reserva, deverá conter as informações do carro escolhido e um formulário com dados básicos de contato (Não precisa enviar o e-mail).
+```
+git clone https://github.com/igorVtermions/hiring-front-end-pag.git
+cd hiring-front-end-pag
+npm install
+npm run dev
+```
 
-•	O formulário deverá ter suas devidas mascaras de input (telefone, cpf, data de nascimento).
+### How to build
 
-•	O formulário deverá ter suas devidas validações (não pode enviar vazio, telefone com 11 dígitos, cpf com 11 dígitos, data de nascimento com 10 dígitos).
+```
+npm run build
+```
 
-•	Ao acessar a página de favoritos, deverá listar os carros favoritados e ter a opção de remover dos favoritos.
-
-
-## Referências
-•	API de carros: https://api-ninjas.com/api/cars
-
-
-## Observações
-1. Não é necessário se preocupar com CORS ou implementar um backend para fazer as requisições. A API de carros permite chamadas diretas do navegador.
-
-2. Design de livre escolha.
-
-
-## Requisitos Técnicos para a entrega do teste
-
-•	Utilizar SASS
-
-•	O projeto deve ter uma documentação em readme ensinando a: 
-1. instalar o projeto na máquina (engines, versão de node, qual gerenciador de pacote usar)
-2. instalar as dependências do projeto
-3. rodar o ambiente de desenvolvimento
-4. rodar a build de deploy da aplicação.
-
-•	Pode utilizar tanto o Axios quanto o Fetch para requisições.
-
-•	Hospedar o projeto em um servidor (Heroku, Vercel, Netlify)
-
-## Diferenciais técnicos
-
-•	Utilização de typescript
-
-•	Bom uso de context api ou outro gerenciamento de estados
-
-Boa sorte!
+## 💻 Online Page:
+link: https://vip-cars.netlify.app
