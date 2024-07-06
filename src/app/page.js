@@ -29,25 +29,23 @@
 //     </main>
 //   );
 // }
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import CarsMake from '../../component/CarsMake';
 
 export default function Home() {
   const [favoritos, setFavoritos] = useState([]);
+  const [showMessage, setShowMessage] = useState(false);
 
-  // Função para carregar os favoritos do localStorage ao iniciar a página
-  useEffect(() => {
-    const favoritosStorage = JSON.parse(localStorage.getItem('favoritos')) || [];
-    setFavoritos(favoritosStorage);
-  }, []);
-
-  // Função para adicionar um carro aos favoritos e atualizar o localStorage
   const handleFavoritar = (car) => {
     if (!favoritos.some(fav => fav.id === car.id)) {
-      const novosFavoritos = [...favoritos, car];
-      setFavoritos(novosFavoritos);
-      localStorage.setItem('favoritos', JSON.stringify(novosFavoritos));
+      setFavoritos([...favoritos, car]);
+      setShowMessage(true);
+
+      // Esconde a mensagem após 3 segundos
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 3000);
     }
   };
 
@@ -59,9 +57,12 @@ export default function Home() {
       <CarsMake marca="ferrari" onFavoritar={handleFavoritar} />
       <CarsMake marca="audi" onFavoritar={handleFavoritar} />
 
-      <Link href="/favoritos">
+      {showMessage && <p>Carro favoritado!</p>}
+
+      <Link href={{ pathname: '/favoritos', query: { favoritos: JSON.stringify(favoritos) } }}>
         <button>Favoritos</button>
       </Link>
+
     </main>
   );
 }

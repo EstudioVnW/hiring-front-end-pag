@@ -1,29 +1,3 @@
-// import React from 'react';
-
-// const FavoritosPage = ({ favoritos }) => {
-//   // Converte a string JSON de favoritos de volta para array
-//   const favoritosArray = JSON.parse(favoritos);
-
-//   return (
-//     <div>
-//       <h1>Lista de Favoritos</h1>
-//       <ul>
-//         {favoritosArray.map(car => (
-//           <li key={car.id}>
-//             {car.year} - {car.model}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// // Parse query para garantir que favoritos é passado corretamente
-// FavoritosPage.getInitialProps = ({ query }) => {
-//   return { favoritos: query.favoritos || '[]' };
-// };
-
-// export default FavoritosPage;
 import React from 'react';
 
 const FavoritosPage = ({ favoritos }) => {
@@ -31,11 +5,15 @@ const FavoritosPage = ({ favoritos }) => {
     <div>
       <h1>Lista de Favoritos</h1>
       <ul>
-        {favoritos.map(car => (
+        {favoritos && favoritos.length > 0 ? (
+          favoritos.map(car => (
             <li key={car.id}>
-                {car.year} - {car.model}
+              {car.year} - {car.model}
             </li>
-        ))}
+          ))
+        ) : (
+          <li>Nenhum carro favorito encontrado.</li>
+        )}
       </ul>
     </div>
   );
@@ -43,7 +21,8 @@ const FavoritosPage = ({ favoritos }) => {
 
 // Parse query para garantir que favoritos é passado corretamente
 FavoritosPage.getInitialProps = ({ query }) => {
-  return { favoritos: JSON.parse(localStorage.getItem('favoritos') || '[]') };
+  const favoritos = JSON.parse(query.favoritos || '[]');
+  return { favoritos };
 };
 
 export default FavoritosPage;
