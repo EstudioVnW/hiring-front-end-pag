@@ -1,0 +1,121 @@
+ul {
+  list-style-type: none; 
+}
+
+// Estilos para botões
+.button {
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.buttonFav {
+  background-color: #ffcc00;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.buttonInfo {
+  background-color: #007bff;
+  color: #fff;
+  margin-left: 10px;
+}
+
+// Estilos para CarsMake
+.carsMake {
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f8f9fa;
+
+      .button {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Estilos para Home
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .message {
+    margin-top: 10px;
+    color: #28a745;
+    font-size: 1.1rem;
+
+    &.hidden {
+      display: none;
+    }
+
+    &.visible {
+      display: block;
+    }
+  }
+}
+
+// Estilos para FavoritosPage
+.favoritosPage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      background-color: #f8f9fa;
+
+      .button {
+        font-size: 1rem;
+      
+    }
+  }
+}
+}
