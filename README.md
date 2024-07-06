@@ -3,6 +3,13 @@
 É uma aplicação web em NextJS que reproduz o comportamento de uma locadora de carros.
 Simula a página Home, Favoritos, Single Page do produto (Carro) e área de reserva com o item escolhido.
 
+Status: Em desenvolvimento.
+Jornada realizada: 
+ - Novas tecnologias aprendidas durante o processo (Next.js e SASS)
+ - Primeira vez utilizando as funções Fork e várias branches no Git e GitHub
+ - Primeira vez utilizando uma API com chave de acesso
+ - Principal desafio: Manipulação de dados da API entre componentes 
+ 
 ---
 
 ## Pré-requisitos
@@ -28,6 +35,12 @@ npm install
 
 Certifique-se de ter configurado as variáveis como chaves especificas de acesso.
 No componente CarsMake há uma chave para acessar a API de carros. 
+
+## Como conseguir a chave?
+
+Abra o link: https://api-ninjas.com
+Crie uma conta (se você não tem) e pegue sua chave API (API-key)
+Adicione a chave API ao seu código.
 
 ## Scripts Disponíveis
 
