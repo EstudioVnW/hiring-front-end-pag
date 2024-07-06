@@ -32,6 +32,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import CarsMake from '../../component/CarsMake';
+import styles from './style.scss'; 
+
 
 export default function Home() {
   const [favoritos, setFavoritos] = useState([]);
@@ -50,17 +52,17 @@ export default function Home() {
   };
 
   return (
-    <main>
+    <main className={styles.home}>
       <h1>Página Principal</h1>
 
-      <CarsMake marca="toyota" onFavoritar={handleFavoritar} />
+      <CarsMake marca="bmw" onFavoritar={handleFavoritar} />
       <CarsMake marca="ferrari" onFavoritar={handleFavoritar} />
       <CarsMake marca="audi" onFavoritar={handleFavoritar} />
 
-      {showMessage && <p>Carro favoritado!</p>}
+      {showMessage && <p className={`${styles.message} ${styles.visible}`}>Carro favoritado!</p>}
 
       <Link href={{ pathname: '/favoritos', query: { favoritos: JSON.stringify(favoritos) } }}>
-        <button>Favoritos</button>
+        <button className="button">Favoritos</button>
       </Link>
 
     </main>

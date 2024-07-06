@@ -1,14 +1,16 @@
 import React from 'react';
+import styles from '../style.scss'; // Importar estilos SASS
 
 const FavoritosPage = ({ favoritos }) => {
   return (
-    <div>
+    <div className={styles.favoritosPage}>
       <h1>Lista de Favoritos</h1>
       <ul>
         {favoritos && favoritos.length > 0 ? (
           favoritos.map(car => (
             <li key={car.id}>
               {car.year} - {car.model}
+              <Button className={`${styles.button} ${styles.buttonInfo}`} text="&#9193;" />
             </li>
           ))
         ) : (
@@ -19,7 +21,6 @@ const FavoritosPage = ({ favoritos }) => {
   );
 };
 
-// Parse query para garantir que favoritos é passado corretamente
 FavoritosPage.getInitialProps = ({ query }) => {
   const favoritos = JSON.parse(query.favoritos || '[]');
   return { favoritos };

@@ -1,8 +1,7 @@
-"use client"
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Button from './Button';
+import styles from '../src/app/style.scss'; // Importar estilos SASS
 
 const CarsMake = ({ marca, onFavoritar }) => {
   const [cars, setCars] = useState([]);
@@ -38,24 +37,24 @@ const CarsMake = ({ marca, onFavoritar }) => {
   };
 
   return (
-    <div>
-      <h1>Lista de Carros - {marca}</h1>
+    <div className={styles.carsMake}>
+      <h1>Lista de Carros - Modelos da {marca}</h1>
       {loading ? ( // Verifica se ainda está carregando
         <p>Carregando...</p>
       ) : (
         <ul>
           {cars.map(car => (
             <li key={car.id}>
-              {car.year} - {car.model}
-              <Button className="buttonFav" text="&#127775;" onClick={() => handleFavoritarClick(car)} />
-              <Button className="buttonInfo" text="&#9193;" />
+              <p>{car.year} - {car.model}</p>
+              <Button className={`${styles.button} ${styles.buttonFav}`} text="&#127775;" onClick={() => handleFavoritarClick(car)} />
+              <Button className={`${styles.button} ${styles.buttonInfo}`} text="&#9193;" />
             </li>
           ))}
         </ul>
       )}
 
       {favoritadoAlert && (
-        <div className="alert alert-success" role="alert">
+        <div className={styles.alert} role="alert">
           Carro favoritado com sucesso!
         </div>
       )}
