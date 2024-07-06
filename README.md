@@ -16,12 +16,13 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 Clone o repositório e instale as dependências.
 
-\`\`\`
 - no terminal cmd ou git bash
+
 git clone https://github.com/GiovanniMontinOFC/hiring-front-end-pag.git
+
 cd hiring-front-end-pag
+
 npm install   
-\`\`\`
 
 ## Configuração do Ambiente
 
