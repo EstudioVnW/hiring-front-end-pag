@@ -24,7 +24,8 @@ npm install
 
 ## Configuração do Ambiente
 
-Certifique-se de ter configurado as variáveis de ambiente necessárias no arquivo `.env`. Você pode usar um arquivo `.env.example` como referência.
+Certifique-se de ter configurado as variáveis como chaves especificas de acesso.
+No componente CarsMake há uma chave para acessar a API de carros. 
 
 ## Scripts Disponíveis
 
