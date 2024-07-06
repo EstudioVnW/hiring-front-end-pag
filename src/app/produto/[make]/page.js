@@ -8,8 +8,8 @@ export default function Produto() {
     const params = useParams();
         
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <main >
+      <div>
 
         <h1>Produto {params.make}</h1>
 

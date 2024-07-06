@@ -1,15 +1,10 @@
-"use client"
 import Image from "next/image";
 
-import { useParams } from "next/navigation";
-
-export default function Produto() {
-
-    const params = useParams();
+export default function Reserva() {
         
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <main >
+      <div >
 
         <h1>Reserva de Carro</h1>
 

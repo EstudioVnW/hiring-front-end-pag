@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 import Button from './Button';
 import styles from '../src/app/style.scss'; // Importar estilos SASS
 
@@ -10,9 +11,8 @@ const CarsMake = ({ marca, onFavoritar }) => {
 
   useEffect(() => {
     const fetchCars = async () => {
-      const model = marca;
       try {
-        const response = await axios.get(`https://api.api-ninjas.com/v1/cars?make=${model}`, {
+        const response = await axios.get(`https://api.api-ninjas.com/v1/cars?make=${marca}`, {
           headers: {
             'X-Api-Key': '9OrY6jgAHniXmz1qCgC4sa1ZuzX1TQosVXnZn3An'
           }
@@ -39,7 +39,7 @@ const CarsMake = ({ marca, onFavoritar }) => {
   return (
     <div className={styles.carsMake}>
       <h1>Lista de Carros - Modelos da {marca}</h1>
-      {loading ? ( // Verifica se ainda está carregando
+      {loading ? (
         <p>Carregando...</p>
       ) : (
         <ul>
@@ -47,7 +47,9 @@ const CarsMake = ({ marca, onFavoritar }) => {
             <li key={car.id}>
               <p>{car.year} - {car.model}</p>
               <Button className={`${styles.button} ${styles.buttonFav}`} text="&#127775;" onClick={() => handleFavoritarClick(car)} />
-              <Button className={`${styles.button} ${styles.buttonInfo}`} text="&#9193;" />
+              <Link href={`/produto/${car.model}_${car.year}`}>
+                <Button className={`${styles.button} ${styles.buttonInfo}`} text="&#9193;"></Button>
+              </Link>
             </li>
           ))}
         </ul>
