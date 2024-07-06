@@ -37,11 +37,12 @@ export default function CarDetails({ params }) {
 
   if (!car) return <Loading />;
 
+  const favoritos = JSON.parse(localStorage.getItem("favoritos")) || [];
+
   return (
     <>
       <section className={styles.car__hero}>
-        {JSON.parse(localStorage.getItem("favoritos")).some(
-          (favorite) => favorite.id === id
+        {favoritos.some((car) => car.id === id
         ) && (
           <div
             onClick={removeCar}
