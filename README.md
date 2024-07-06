@@ -16,7 +16,8 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 
 Clone o repositório e instale as dependências.
 
-\`\`\`no terminal cmd ou git bash
+\`\`\`
+- no terminal cmd ou git bash
 git clone https://github.com/GiovanniMontinOFC/hiring-front-end-pag.git
 cd hiring-front-end-pag
 npm install   
@@ -61,10 +62,11 @@ Este projeto está configurado para ser automaticamente implantado no Vercel.
 Você pode visualizá-lo online seguindo os passos abaixo:
 
 1. **Acesso ao Projeto no Vercel:**
-   - Acesse o seguinte link: [hiring-front-end-pag](https://hiring-front-end-pag-green.vercel.app/)(https://vercel.com/giovanni-montins-projects/hiring-front-end-pag)
+   - Acesse o seguinte link: [Vizualização hiring-front-end-pag](https://hiring-front-end-pag-green.vercel.app/)- 
+   - [Projeto hiring-front-end-pag](https://vercel.com/giovanni-montins-projects/hiring-front-end-pag)
 
 2. **Visualização de Código Fonte:**
    - O código fonte deste projeto está disponível no GitHub.
-   - Para visualizar ou contribuir, visite: [hiring-front-end-pag](https://github.com/GiovanniMontinOFC/hiring-front-end-pag)
+   - Para visualizar ou contribuir, visite: [Código Fonte hiring-front-end-pag](https://github.com/GiovanniMontinOFC/hiring-front-end-pag)
 
 ---
