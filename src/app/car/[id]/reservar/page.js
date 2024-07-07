@@ -12,14 +12,12 @@ import styles from "./page.module.sass";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+//Next
+import { useRouter } from "next/navigation";
+
 export default function Page({ params }) {
   const { id } = params;
   const car = useSpecificCar({ id });
-
-  function handleReservar() {
-    alert("Reservado com sucesso!");
-    history.back();
-  }
 
   useEffect(() => {
     AOS.init({
@@ -27,11 +25,29 @@ export default function Page({ params }) {
     });
   }, []);
 
+  const router = useRouter();
+
+  function handleReservar(event) {
+    event.preventDefault();
+    const form = new FormData(event.target);
+    const data = Object.fromEntries(form.entries());
+    data.name = data.name.trim();
+    data.cpf = data.cpf.replace(/\D/g, "");
+    data.phone = data.phone.replace(/\D/g, "");
+    data.birth = data.birth.replaceAll("-", "/").split("/").reverse().join("/");
+    const confirm = window.confirm(
+      `Você está prestes a reservar o carro: ${car?.model} \nCom os seguintes dados: \nNome: ${data.name}, \nCPF: ${data.cpf}, \nTelefone: ${data.phone}, \nData de nascimento: ${data.birth}. \nDeseja continuar?`
+    );
+    if (confirm) {
+      router.push(`/car/${id}/reservar/sucess`);
+    }
+  }
+
   return (
     <>
       <section className={styles.reservar__hero}>
         <div
-          onClick={() => history.back()}
+          onClick={() => router.back(`/car/${id}`)}
           className={styles.goBack}
           data-aos="fade-right"
         >
@@ -68,7 +84,7 @@ export default function Page({ params }) {
         </p>
       </section>
       <section className={styles.reservar__form}>
-        <form onSubmit={handleReservar}>
+        <form onSubmit={handleReservar} action="" method="">
           <label data-aos="fade-up" htmlFor="name">
             Nome:
           </label>
@@ -97,7 +113,7 @@ export default function Page({ params }) {
           <input
             data-aos="fade-up"
             data-aos-anchor-placement="top-bottom"
-            type="text"
+            type="number"
             id="cpf"
             name="cpf"
             minLength="11"
@@ -116,7 +132,14 @@ export default function Page({ params }) {
             maxLength="8"
             required
           />
-          <button type="submit" data-aos="fade-up" data-aos-anchor-placement="top-bottom">Reservar</button>
+
+          <button
+            type="submit"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+          >
+            Reservar
+          </button>
         </form>
       </section>
     </>
