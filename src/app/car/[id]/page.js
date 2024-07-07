@@ -16,6 +16,9 @@ import styles from "./page.module.sass";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+//React-icons
+import { FaHeart } from "react-icons/fa";
+
 export default function CarDetails({ params }) {
   const { id } = params;
   const car = useSpecificCar({ id });
@@ -26,7 +29,6 @@ export default function CarDetails({ params }) {
     localStorage.setItem("favoritos", JSON.stringify(updatedFavoritos));
     alert("Carro removido dos favoritos");
     history.back();
-    setCar(null);
   }
 
   useEffect(() => {
@@ -50,9 +52,7 @@ export default function CarDetails({ params }) {
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-              <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z"></path>
-            </svg>
+            <FaHeart />
           </div>
         )}
         <div className={styles.car__title} data-aos="fade-up">

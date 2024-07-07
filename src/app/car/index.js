@@ -23,6 +23,9 @@ import carImage from "../assets/img/car-example.webp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+//React-icons
+import { FaHeart } from "react-icons/fa";
+
 export default function Index({ model }) {
   const [cars, setCars] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
@@ -85,23 +88,9 @@ export default function Index({ model }) {
                       onClick={() => handleFavoritar(car.id)}
                     >
                       {favoritos.some((favorito) => favorito.id === car.id) ? (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                          className={styles.favorited}
-                        >
-                          <path
-                            d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z"
-                            className={styles.filled}
-                          ></path>
-                        </svg>
+                        <FaHeart className={styles.favorited} />
                       ) : (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 64 64"
-                        >
-                          <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z" />
-                        </svg>
+                        <FaHeart />
                       )}
                     </div>
                     <div className={styles.card__view}>
