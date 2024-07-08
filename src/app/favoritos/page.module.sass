@@ -1,0 +1,116 @@
+@import '../assets/sass/mixins'
+@import '../assets/sass/variables'
+
+.fav__container
+  min-height: 100vh
+  @include flex(column, flex-start, center)
+  padding: 1.25rem 0
+  box-sizing: border-box
+
+.fav__title
+  @include flex(row, center, center)
+  margin: 0 0 1rem 0
+  font-size: 2rem
+  font-weight: 700
+  color: #f9f9f9
+
+.fav__cards__container
+  @include flex(row, center, center)
+  flex-wrap: wrap
+  padding: 1.25rem 0
+  box-sizing: border-box
+
+.fav__no__favorites
+  @include flex(column, center, center)
+  margin: 0 0 1rem 0
+  font-size: 1.5rem
+  font-weight: 700
+  color: #f9f9f9
+
+.fav__card
+  width: 15rem
+  margin: 0 1.25rem 0 1.25rem
+  text-align: center
+
+.img__container
+  height: 14.375rem
+  width: 12.5rem
+  overflow: hidden
+  border-radius: 0rem 0rem 1.25rem 1.25rem
+  display: inline-block
+  img
+    transform: skew(0deg, -13deg)
+    object-fit: cover
+    object-position: bottom
+    position: relative
+    bottom: 1.25rem
+
+.remove__favorite
+  @include flex(row, center, center)
+  margin-left: 0.9375rem
+  width: 2.1875rem
+  height: 2.1875rem
+  z-index: 1
+  position: absolute
+  top: 1rem
+  left: .5rem
+  transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) all .3s
+  cursor: pointer
+  color: #000
+  svg
+    width: 100%
+    height: 100%
+    position: relative
+    transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) all .3s
+    path
+      stroke: $red
+      fill: $red
+      transition: ease all .3s
+
+.img__skew
+  display: inline-block
+  border-radius: 1.25rem
+  overflow: hidden
+  transform: skew(0deg, 13deg)
+  font-size: 0rem
+  margin: 1.875rem 0rem 0rem 0rem
+  height: 15.625rem
+  width: 12.5rem
+
+.card__content
+  box-shadow: 0rem 0rem 0.625rem 0rem rgba(0,0,0,0.2)
+  padding: 7.5rem 1.25rem 1.25rem 1.25rem
+  border-radius: 1.25rem
+  background: $secondary-bg-color
+  margin: -7.5rem 0rem 0rem 0rem
+  line-height: 1.1875rem
+  font-size: 0.875rem
+  h3
+    margin: 1.25rem 0rem 0.625rem 0rem
+    color: $primary-blue
+    font-size: 1.125rem
+    text-transform: uppercase
+
+.card__details
+  @include flex(row, center, center)
+  margin: 20 0 0 0
+  button
+    width: 100%
+    background-color: #a8d0e6
+    border-radius: 6.25rem
+    color: #171794
+    cursor: pointer
+    display: inline-block
+    padding: 0.4375rem 1.25rem
+    text-align: center
+    text-decoration: none
+    transition: all 250ms
+    border: 0
+    font-size: 1rem
+    user-select: none
+    -webkit-user-select: none
+    touch-action: manipulation
+
+    &:hover
+      box-shadow: rgba(0, 102, 204, .35) 0 -1.5625rem 1.125rem -0.875rem inset, rgba(0, 102, 204, .25) 0 0.0625rem 0.125rem, rgba(0, 102, 204, .25) 0 0.125rem 0.25rem, rgba(0, 102, 204, .25) 0 0.25rem 0.5rem, rgba(0, 102, 204, .25) 0 0.5rem 1rem, rgba(0, 102, 204, .25) 0 1rem 2rem
+      transform: scale(1.05) rotate(-1deg)

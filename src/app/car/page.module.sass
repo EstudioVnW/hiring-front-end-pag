@@ -1,0 +1,123 @@
+@import '../assets/sass/mixins'
+@import '../assets/sass/variables'
+
+.cards__container
+  @include flex(row, center, center)
+  padding: 1.25rem 0
+  box-sizing: border-box
+  .card
+    width: 18.75rem
+    transition: ease all .3s
+
+    .card__wrapper
+      padding-top: 14.75rem
+      box-sizing: border-box
+      position: relative
+      transition: ease all .3s
+      background-color: $secondary-bg-color
+
+      &:hover
+        transform: translateY(-0.625rem)
+        .card__image
+          transform: scale(1.15)
+
+      .card__color
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 12.5rem
+        background-color: $primary-blue
+
+      .card__image
+        position: absolute
+        bottom: calc(100% - 17.5rem)
+        width: 100%
+        height: 12.5rem
+        transition: ease all .3s
+
+      .card__info
+        @include flex(column, center, center)
+        height: 10.625rem
+        padding: 1rem 1.25rem
+        box-sizing: border-box
+        p
+          width: 100%
+          font-size: 0.875rem
+          text-align: center
+          color: #f9f9f9
+
+        .car__model
+          margin-bottom: 0.625rem
+          font-size: 1.5rem
+          font-weight: 600
+          text-transform: uppercase
+
+        .car__year
+          text-overflow: ellipsis
+          white-space: nowrap
+          overflow: hidden
+
+      .card__actions
+        @include flex(row, space-between, center)
+        width: 100%
+        padding-top: 0.625rem
+
+        .card__favorite
+          @include flex(row, center, center)
+          margin-left: 0.9375rem
+          width: 2rem
+          height: 1.8rem
+          object-fit: cover
+          position: absolute
+          top: 1rem
+          right: 1rem
+          transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) all .3s
+          cursor: pointer
+          svg
+            width: 100%
+            height: 100%
+            stroke: #000
+            fill: #000
+            stroke-width: 1.5rem
+            position: relative
+            transition: cubic-bezier(0.68, -0.55, 0.27, 1.55) all .3s
+            path
+              width: 90%
+              height: 90%
+              fill: transparent
+              transition: ease all .3s
+
+          .favorited
+            transform: rotateX(360deg) scale(1.2)
+            path
+              stroke: $red
+              fill: $red
+              transition-delay: .2s
+
+      .card__view
+        @include flex(row, center, center)
+        width: 100%
+        padding-bottom: 1.25rem
+
+        button
+          width: 90%
+          font-size: 1rem
+          letter-spacing: 0.125rem
+          text-decoration: none
+          text-transform: uppercase
+          color: #000000
+          background-color: #a8d0e6
+          cursor: pointer
+          border: 0.1875rem solid
+          padding: .5rem
+          box-shadow: 0.0625rem 0.0625rem 0rem 0rem, 0.125rem 0.125rem 0rem 0rem, 0.1875rem 0.1875rem 0rem 0rem, 0.25rem 0.25rem 0rem 0rem, 0.3125rem 0.3125rem 0rem 0rem
+          position: relative
+          user-select: none
+          touch-action: manipulation
+
+          &:active
+            box-shadow: 0rem 0rem 0rem 0rem
+            top: 0.3125rem
+            left: 0.3125rem
